@@ -1,0 +1,14 @@
+{
+  "ide": {
+    
+  },
+  "plugins": {
+    "guess-types": {
+      
+    }
+  },
+  "libs": [
+    "ecma5",
+    "browser"
+  ]
+}

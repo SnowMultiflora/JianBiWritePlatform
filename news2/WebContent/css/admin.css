@@ -1,0 +1,17 @@
+body{ color:#333; font-size:13px;}
+input,select,textarea{color:#333;}
+.bg{  position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+     background:url(../images/mybg.jpg);
+     background-size: cover;
+    overflow: hidden;
+     }
+.panel{background:#fff;}
+form .form-group:last-child{padding-bottom:0;}
+.passcode{position:absolute;right:0;bottom:0;height:32px;margin:1px;border-left:solid 1px #ddd;text-align:center;line-height:32px;border-radius:0 4px 4px 0;}
+ul,li{ list-style-type:none;}
+
+

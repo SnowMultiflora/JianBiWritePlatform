@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//WebContent/info.jsp=UTF-8
+encoding//src/com/servlet/AddServlet.java=gbk
+encoding//src/com/servlet/UpdateUserServlet.java=UTF-8

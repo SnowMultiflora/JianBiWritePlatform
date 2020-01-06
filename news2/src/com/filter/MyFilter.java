@@ -1,0 +1,64 @@
+package com.filter;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.pojo.Url;
+
+
+
+public class MyFilter implements Filter{
+
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
+		//设置请求编码格式
+		request.setCharacterEncoding("utf-8");
+		//设置响应编码格式
+		response.setContentType("text/html;charset=utf-8");
+		//强转request对象
+		HttpServletRequest req=((HttpServletRequest)request);
+		//强转response对象
+		HttpServletResponse resp=((HttpServletResponse)response);
+		//获取此次请求uri
+		String uri=req.getRequestURI();
+		System.out.println(uri);
+		if("/news2/main.jsp".equals(uri)){
+			//放行
+			chain.doFilter(request, response);
+		}else{
+			//session管理(session统一校验)
+				//获取Session对象
+					HttpSession session = req.getSession();
+					Object obj=session.getAttribute("aname");
+				//判断
+					if(obj!=null){
+						
+					}else{
+						//重定向到登录页面
+						resp.sendRedirect("/news2/Userlogin.jsp");
+					}
+		}
+}
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
+}
